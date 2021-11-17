@@ -18,12 +18,12 @@ class LoadingScreen extends StatefulWidget {
 
 class _LoadingScreenState extends State<LoadingScreen> {
   bool isGettingData;
-  bool correctAPIKeys;
+  //bool correctAPIKeys;
   String message;
 
   Future getWeatherData() async {
     isGettingData = true;
-    correctAPIKeys = true;
+    //correctAPIKeys = true;
     message = "Loading ";
     int result = 0;
 
@@ -142,28 +142,28 @@ class _LoadingScreenState extends State<LoadingScreen> {
                     ),
                   ),
                 ),
-                Visibility(
-                  //show only when api keys are bad
-                  visible: !correctAPIKeys,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: RaisedButton(
-                      child: Text(
-                        "Edit API Keys",
-                        style: TextStyle(color: ThemeColors.primaryTextColor()),
-                      ),
-                      color: Colors.blueAccent,
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => LoadingScreen(),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ),
+                // Visibility(
+                //   //show only when api keys are bad
+                //   visible: !correctAPIKeys,
+                //   child: Padding(
+                //     padding: const EdgeInsets.all(8.0),
+                //     child: RaisedButton(
+                //       child: Text(
+                //         "Edit API Keys",
+                //         style: TextStyle(color: ThemeColors.primaryTextColor()),
+                //       ),
+                //       color: Colors.blueAccent,
+                //       onPressed: () {
+                //         Navigator.pushReplacement(
+                //           context,
+                //           MaterialPageRoute(
+                //             builder: (context) => LoadingScreen(),
+                //           ),
+                //         );
+                //       },
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ],
