@@ -121,12 +121,15 @@ class HourlyCard extends StatelessWidget {
   }
 
   Future<String> parseData() async {
+    bool imperial = await SharedPrefs.getImperial();
     WindUnit unit = await SharedPrefs.getWindUnit();
 
-    double windSpeed = weatherData["wind_speed"]?.round();
+    double windSpeed = await WeatherModel.convertWindSpeed(
+        weatherData["wind_speed"]?.round(), unit, imperial);
     int windDirection = weatherData["wind_deg"]?.round();
     String unitString = await WeatherModel.getWindUnitString(unit);
-    return "${windSpeed.round()} $unitString ${WeatherModel.getWindCompassDirection(windDirection)}";
+
+    return "${windSpeed.round()} ${unitString}";
   }
 
   void showInfoDialog() {

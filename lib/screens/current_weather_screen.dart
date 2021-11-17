@@ -5,7 +5,6 @@ import 'package:weathergrade_aplus/utils/weather_type.dart';
 import 'package:weathergrade_aplus/constants/constants.dart';
 import 'package:weathergrade_aplus/preferences/shared_prefs.dart';
 import 'package:weathergrade_aplus/preferences/theme_colors.dart';
-
 import 'package:weathergrade_aplus/screens/saved_location_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:weathergrade_aplus/constants/text_style.dart';

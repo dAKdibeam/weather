@@ -27,3 +27,9 @@ subprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+project.ext {
+      defaultBuildToolsVersion="29.0.3" //String
+      defaultMinSdkVersion=22 //Integer - Minimum requirement is Android 5.1
+      defaultTargetSdkVersion=28 //Integer - We ALWAYS target the latest by default
+      defaultCompileSdkVersion=31 //Integer - We ALWAYS compile with the latest by default
+}

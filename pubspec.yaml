@@ -36,8 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_spinkit: ^4.1.2+1
   http: ^0.12.2
-  geolocator: ^7.6.2
+  geolocator: ^7.7.1
   geolocator_android: ^2.1.0
+  geolocator_web: ^2.0.6
   spritewidget: ^0.9.24
   expandable: ^4.1.4
   auto_size_text: ^2.1.0

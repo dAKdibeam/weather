@@ -40,32 +40,12 @@ class WeatherModel {
       return 0;
     }
     //get the user's location
-    //await LocationService.requestLocationPermission();
     await LocationService.getCurrentLocation();
 
     if (LocationService.latitude == null || LocationService.longitude == null) {
       weatherData = null;
       return 1;
     }
-
-    //send a request to OpenWeatherMap one call api
-
-    // if (_kOpenWeatherApiKeyCustom != "") {
-    //   NetworkHelper networkHelper = NetworkHelper(
-    //     url:
-    //         "${kOpenWeatherMapURL}lat=${LocationService.latitude}&lon=${LocationService.longitude}&appid=$_kOpenWeatherApiKeyCustom&units=$unit&lang=en}",
-    //   );
-    //   print(
-    //       "${kOpenWeatherMapURL}lat=${LocationService.latitude}&lon=${LocationService.longitude}&appid=$_kOpenWeatherApiKeyCustom&units=$unit&lang=en}");
-    //   weatherData = await networkHelper
-    //       .getData(); //getData gets and decodes the json data
-    //   locationName = "currentLocationTitle";
-
-    //   if (!(weatherData == 401 || weatherData == 429 || weatherData == null)) {
-    //     return 1;
-    //   }
-    // }
-
     NetworkHelper networkHelper = NetworkHelper(
       url:
           "${kOpenWeatherMapURL}lat=${LocationService.latitude}&lon=${LocationService.longitude}&appid=$_kOpenWeatherApiKey&units=$unit&lang=en}",
@@ -99,23 +79,6 @@ class WeatherModel {
       //return it to the loading screen
       return 0;
     }
-
-    //send a request to OpenWeatherMap one call api
-
-    // if (_kOpenWeatherApiKeyCustom != "") {
-    //   NetworkHelper networkHelper = NetworkHelper(
-    //     url:
-    //         "${kOpenWeatherMapURL}lat=$latitude&lon=$longitude&appid=$_kOpenWeatherApiKeyCustom&units=$unit&lang=en}",
-    //   );
-    //   var data = await networkHelper.getData();
-
-    //   weatherData = data;
-    //   locationName = name;
-
-    //   if (!(data == 401 || data == 429)) {
-    //     return 1;
-    //   }
-    // }
     NetworkHelper networkHelper = NetworkHelper(
       url:
           "${kOpenWeatherMapURL}lat=$latitude&lon=$longitude&appid=$_kOpenWeatherApiKey&units=$unit&lang=en}",

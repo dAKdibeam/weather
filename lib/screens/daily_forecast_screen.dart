@@ -78,28 +78,6 @@ class _DailyForecastScreenState extends State<DailyForecastScreen> {
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
           elevation: 0,
-          // title: Text(
-          //   WeatherModel.locationName,
-          //   style: TextStyle(
-          //     fontWeight: FontWeight.w200,
-          //     fontSize: 30,
-          //     color: ThemeColors.primaryTextColor(),
-          //   ),
-          //   overflow: TextOverflow.ellipsis,
-          // ),
-          actions: [
-            ButtonTheme(
-              minWidth: 0,
-              child: FlatButton(
-                onPressed: refresh,
-                child: Icon(
-                  Icons.refresh_outlined,
-                  size: 27,
-                  color: ThemeColors.primaryTextColor(),
-                ),
-              ),
-            )
-          ],
         ),
         backgroundColor: ThemeColors.backgroundColor(),
         body: isLoading

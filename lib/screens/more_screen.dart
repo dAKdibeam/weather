@@ -95,30 +95,6 @@ class _MoreScreenState extends State<MoreScreen> {
                       ),
                     ),
                     Positioned(
-                      top: 70,
-                      left: 16,
-                      child: TextButton(
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.only(right: 10),
-                        ),
-                        onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) {
-                          //       return ;
-                          //     },
-                          //   ),
-                          // );
-                        },
-                        child: Text(
-                          "${"changelog"} >",
-                          style:
-                              TextStyle(fontSize: 16, color: Colors.grey[400]),
-                        ),
-                      ),
-                    ),
-                    Positioned(
                       top: 22,
                       right: 15,
                       child: Container(
@@ -226,124 +202,39 @@ class _MoreScreenState extends State<MoreScreen> {
                   shape: RoundedRectangleBorder(borderRadius: kBorderRadius),
                 ),
               ),
-              SizedBox(
-                height: 80,
-                child: Card(
-                  child: Center(
-                    child: ListTile(
-                      title: Text(
-                        "windSpeedUnit",
-                        style: TextStyle(color: ThemeColors.primaryTextColor()),
-                      ),
-                      leading: Icon(
-                        Icons.waves_sharp,
-                        color: ThemeColors.secondaryTextColor(),
-                      ),
-                      trailing: DropdownButton<String>(
-                        value: windDropdownValue,
-                        icon: Icon(Icons.arrow_drop_down),
-                        iconSize: 20,
-                        style: TextStyle(
-                            color: ThemeColors.primaryTextColor(),
-                            fontSize: 16),
-                        underline: Container(
-                          height: 2,
-                          color: Colors.blueAccent,
-                        ),
-                        dropdownColor: ThemeColors.backgroundColor(),
-                        onChanged: (String newValue) async {
-                          windDropdownValue = newValue;
-                          switch (newValue) {
-                            case "miles/h":
-                              await SharedPrefs.setWindUnit(WindUnit.MPH);
-                              break;
-                            case "meters/s":
-                              await SharedPrefs.setWindUnit(WindUnit.MS);
-                              break;
-                            case "kilometers/h":
-                              await SharedPrefs.setWindUnit(WindUnit.KMPH);
-                              break;
-                          }
-                          setState(() {});
-                        },
-                        items: <String>["miles/h", "meters/s", "kilometers/h"]
-                            .map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(value),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ),
-                  color: ThemeColors.cardColor(),
-                  shape: RoundedRectangleBorder(borderRadius: kBorderRadius),
-                ),
-              ),
-              SizedBox(
-                height: 80,
-                child: Card(
-                  child: Center(
-                    child: ListTile(
-                      title: Text(
-                        "advancedSettings",
-                        style: TextStyle(
-                          color: ThemeColors.primaryTextColor(),
-                        ),
-                      ),
-                      onTap: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) =>
-                        //             AdvancedSettingsScreen()));
-                      },
-                      leading: Icon(
-                        Icons.settings,
-                        color: ThemeColors.secondaryTextColor(),
-                      ),
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(borderRadius: kBorderRadius),
-                  color: ThemeColors.cardColor(),
-                ),
-              ),
-              SizedBox(
-                height: 12,
-              ),
-              Container(
-                height: 130,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    FlatButton(
-                      onPressed: () async {
-                        const url =
-                            "https://github.com/SpicyChair/pluvia_weather_flutter";
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        }
-                      },
-                      child: ThemeColors.isDark
-                          ? Image.asset("assets/GitHub-Mark-Light-64px.png")
-                          : Image.asset("assets/GitHub-Mark-64px.png"),
-                    ),
-                    SizedBox(
-                      height: 12,
-                    ),
-                    Center(
-                      child: Text(
-                        "viewOnGithub",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.primaryTextColor()),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // Container(
+              //   height: 130,
+              //   child: Column(
+              //     mainAxisAlignment: MainAxisAlignment.center,
+              //     crossAxisAlignment: CrossAxisAlignment.center,
+              //     children: [
+              //       FlatButton(
+              //         onPressed: () async {
+              //           const url =
+              //               "https://github.com/SpicyChair/pluvia_weather_flutter";
+              //           if (await canLaunch(url)) {
+              //             await launch(url);
+              //           }
+              //         },
+              //         child: ThemeColors.isDark
+              //             ? Image.asset("assets/GitHub-Mark-Light-64px.png")
+              //             : Image.asset("assets/GitHub-Mark-64px.png"),
+              //       ),
+              //       SizedBox(
+              //         height: 12,
+              //       ),
+              //       Center(
+              //         child: Text(
+              //           "viewOnGithub",
+              //           style: TextStyle(
+              //               fontSize: 14,
+              //               fontWeight: FontWeight.bold,
+              //               color: ThemeColors.primaryTextColor()),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),

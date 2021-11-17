@@ -43,13 +43,13 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
      */
 
-    if (result == 0) {
-      setState(() {
-        isGettingData = false;
-        message = "Please enable WIFI or Mobile Data and retry ";
-      });
-      return;
-    }
+    // if (result == 0) {
+    //   setState(() {
+    //     isGettingData = false;
+    //     message = "Please enable WIFI or Mobile Data and retry ";
+    //   });
+    //   return;
+    // }
 
     await loadSharedPrefs();
 

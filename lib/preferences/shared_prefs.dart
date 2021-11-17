@@ -67,7 +67,6 @@ class SharedPrefs {
   //values for custom owm api key
 
   static const String owmKey = "openWeatherKey";
-
   static Future<String> getOpenWeatherAPIKey() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String code = prefs.getString(owmKey) ?? "";

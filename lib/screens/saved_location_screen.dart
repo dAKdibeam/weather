@@ -96,14 +96,6 @@ class _SavedLocationScreenState extends State<SavedLocationScreen> {
       backgroundColor: ThemeColors.backgroundColor(),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
-          /*
-          Test Code
-           await WeatherModel.getCoordLocationWeather(
-          //               51.5074, 0.1278, "London");
-          //           widget.onLocationSelect(0);
-          //           return;
-           */
-
           var locationData = await Navigator.push(
             context,
             MaterialPageRoute(
@@ -127,7 +119,7 @@ class _SavedLocationScreenState extends State<SavedLocationScreen> {
             refresh();
           }
         },
-        label: Text("addLocation"),
+        label: Text("Add Location"),
         icon: Icon(Icons.add),
       ),
       body: SafeArea(

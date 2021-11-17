@@ -1,21 +1,17 @@
 import 'package:app_settings/app_settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:weathergrade_aplus/preferences/language.dart';
 import 'package:weathergrade_aplus/preferences/theme_colors.dart';
-//import 'package:weathergrade_aplus/screens/advanced_settings_screen.dart';
 import 'package:weathergrade_aplus/screens/current_weather_screen.dart';
 import 'package:weathergrade_aplus/screens/daily_forecast_screen.dart';
 import 'package:weathergrade_aplus/screens/loading_screen.dart';
-//import 'package:weathergrade_aplus/screens/saved_location_screen.dart';
-//import 'package:weathergrade_aplus/screens/daily_forecast_screen.dart';
-//import 'package:weathergrade_aplus/screens/more_screen.dart';
 import 'package:weathergrade_aplus/models/location_service.dart';
 import 'package:weathergrade_aplus/models/weather_model.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:weathergrade_aplus/screens/more_screen.dart';
 import 'package:weathergrade_aplus/screens/saved_location_screen.dart';
+import 'package:weathergrade_aplus/screens/search_screen.dart';
 
 /*
 This is the screen which acts as a
@@ -69,7 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
         controller: pageController,
         children: [
           CurrentWeatherScreen(),
-          DailyForecastScreen(),
           SavedLocationScreen(
             onLocationSelect: onTabChange,
           ),
@@ -101,23 +96,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 tabs: [
                   GButton(
                     icon: LineIcons.sun_o,
-                    text: "Current ",
                     iconActiveColor: Colors.amber[900],
                     iconColor: ThemeColors.primaryTextColor(),
                     textColor: Colors.amber[900],
                     backgroundColor: Colors.amber[600].withOpacity(.2),
                   ),
                   GButton(
-                    icon: LineIcons.calendar,
-                    text: "Forecast ",
-                    iconActiveColor: Colors.pink,
-                    iconColor: ThemeColors.primaryTextColor(),
-                    textColor: Colors.pink,
-                    backgroundColor: Colors.pink.withOpacity(.2),
-                  ),
-                  GButton(
                     icon: Icons.location_on_outlined,
-                    text: "Locations ",
                     iconActiveColor: Colors.blueAccent,
                     iconColor: ThemeColors.primaryTextColor(),
                     textColor: Colors.blueAccent,
@@ -125,7 +110,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   GButton(
                     icon: Icons.more_vert_outlined,
-                    text: "More ",
                     iconActiveColor: Colors.teal,
                     iconColor: ThemeColors.primaryTextColor(),
                     textColor: Colors.teal,
@@ -187,11 +171,9 @@ class _HomeScreenState extends State<HomeScreen> {
             FlatButton(
               child: Text("Default Location "),
               onPressed: () {
-                //open the settings screen for location
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => AdvancedSettingsScreen()));
+                // open the settings screen for location
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SearchScreen()));
               },
             ),
             FlatButton(
